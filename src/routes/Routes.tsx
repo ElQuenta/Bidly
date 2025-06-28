@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
-import { lazy } from 'react'
+import { lazy, Suspense } from 'react'
 
 import { Layout } from '../layout/layout'
 import AuthGuard from '../guards/AuthGuard'
@@ -7,7 +7,7 @@ import RoleGuard from '../guards/RoleGuard'
 
 const SignIn = lazy(() => import('../pages/auth/SignInPage'))
 const SignUp = lazy(() => import('../pages/auth/SignUpPage'))
-const Redirecting = lazy(() => import('./redirecting'))
+const Redirecting = lazy(() => import('./Redirecting'))
 const AuctionRoom = lazy(() => import('../pages/AuctionRoomPage'))
 const AdminPanel = lazy(() => import('../pages/admin/AdminPanelPage'))
 const UserAdmin = lazy(() => import('../pages/admin/UserAdminPage'))
@@ -26,7 +26,10 @@ export const AppRoutes = () => {
           <Route path='auctionRoom' element={<AuctionRoom />} />
           <Route element={<RoleGuard />}>
             <Route path='adminPanel' element={<AdminPanel />} />
-            <Route path='userAdmin' element={<UserAdmin />} />
+            <Route path='userAdmin' element={
+              <Suspense fallback={<div>Cargando...</div>}>
+                <UserAdmin />
+              </Suspense>} />
           </Route>
         </Route>
         <Route path='signIn' element={<SignIn />} />

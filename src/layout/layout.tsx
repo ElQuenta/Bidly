@@ -1,24 +1,22 @@
 import {
   Box,
   CssBaseline,
-  Toolbar,
 } from "@mui/material";
 
 import { Outlet } from "react-router";
-// import Navbar from "./NavBar";
+import Navbar from "./NavBar";
 
 
 
-export const Layout = () => {
+export const Layout = ({ children }: { children?: React.ReactNode }) => {
 
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <Box sx={{ flexGrow: 1 }}>
-        {/* <Navbar /> */}
+        <Navbar />
         <Box component="main" sx={{ p: 3 }}>
-          <Toolbar />
-          <Outlet />
+          {children ?? <Outlet />}
         </Box>
       </Box>
     </Box>
