@@ -1,0 +1,38 @@
+import { BrowserRouter, Route, Routes } from 'react-router'
+import { lazy } from 'react'
+
+import { Layout } from '../layout/layout'
+import AuthGuard from '../guards/AuthGuard'
+import RoleGuard from '../guards/RoleGuard'
+
+const SignIn = lazy(() => import('../pages/auth/SignInPage'))
+const SignUp = lazy(() => import('../pages/auth/SignUpPage'))
+const Redirecting = lazy(() => import('./redirecting'))
+const AuctionRoom = lazy(() => import('../pages/AuctionRoomPage'))
+const AdminPanel = lazy(() => import('../pages/admin/AdminPanelPage'))
+const UserAdmin = lazy(() => import('../pages/admin/UserAdminPage'))
+const ErrorPage = lazy(() => import('../pages/error/ErrorPage'))
+
+export const AppRoutes = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Redirecting />} />
+        <Route element={
+          <AuthGuard>
+            <Layout />
+          </AuthGuard>
+        }>
+          <Route path='auctionRoom' element={<AuctionRoom />} />
+          <Route element={<RoleGuard />}>
+            <Route path='adminPanel' element={<AdminPanel />} />
+            <Route path='userAdmin' element={<UserAdmin />} />
+          </Route>
+        </Route>
+        <Route path='signIn' element={<SignIn />} />
+        <Route path='signUp' element={<SignUp />} />
+        <Route path='*' element={<ErrorPage />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
