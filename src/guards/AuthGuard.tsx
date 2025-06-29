@@ -1,9 +1,9 @@
 import { Navigate } from "react-router";
-import { useAuth } from "../context/UserContext";
+import { useAuthStore } from "../store/authStore";
 
 const AuthGuard = ({ children }: { children: React.ReactNode }) => {
-  const { isAuthenticated } = useAuth()
-  return <>{isAuthenticated ? children : <Navigate to="/" />}</>;
+  const isAuth = useAuthStore((state)=>state.isAuth)
+  return <>{isAuth ? children : <Navigate to="/" />}</>;
 };
 
 export default AuthGuard

@@ -12,6 +12,10 @@ i18n
       en: { translation: enJSON },
       es: { translation: esJSON },
     },
+    detection: {
+      order: ['localStorage', 'browser'],
+      caches: ['localStorage'],
+    },
     fallbackLng: 'es',
     interpolation: { escapeValue: false },
   });

@@ -18,6 +18,8 @@ export const AppRoutes = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Redirecting />} />
+        <Route path='signIn' element={<SignIn />} />
+        <Route path='signUp' element={<SignUp />} />
         <Route element={
           <AuthGuard>
             <Layout />
@@ -32,8 +34,6 @@ export const AppRoutes = () => {
               </Suspense>} />
           </Route>
         </Route>
-        <Route path='signIn' element={<SignIn />} />
-        <Route path='signUp' element={<SignUp />} />
         <Route path='*' element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>

@@ -1,8 +1,8 @@
 import { Navigate, Outlet } from "react-router";
-import { useAuth } from "../context/UserContext";
+import { useAuthStore } from "../store/authStore";
 
 const RoleGuard = () => {
-  const { user } = useAuth()
+  const user = useAuthStore((state) => state.user)
   return <>{user.role === 'admin' ? Outlet : (Navigate({ to: '/', replace: true }))}</>
 };
 

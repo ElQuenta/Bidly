@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Miguel",
+      "lasname": "Quenta",
+      "nickname": "ElQuenta",
+      "email": "angeloquenta@gmail.com",
+      "password": "d1f1c1l",
+      "role": "user"
+    }
+  ]
+}

@@ -3,10 +3,12 @@ import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { darkTheme, lightTheme } from '../theme'
 
-const ThemeToggleContext = createContext({
-  toggleTheme: () => {},
-  mode: 'light' as 'light' | 'dark',
-})
+interface ThemeToggleContextInterface {
+  toggleTheme: () => void;
+  mode: 'light' | 'dark';
+}
+
+const ThemeToggleContext = createContext<ThemeToggleContextInterface>({} as ThemeToggleContextInterface)
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const useThemeToggle = () => useContext(ThemeToggleContext)
