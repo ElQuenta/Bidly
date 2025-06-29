@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "jserver": "json-server --watch db.json --port 3000"
+    "jserver": "json-server --watch db.json --port 3000",
+    "jserverU": "json-server --watch users.json --port 3001"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-import jsonServerInstance from "../api/jsonServerInstance";
+import jsonServerInstance from "../api/jsonServerInstanceUsers";
 import type { User } from "../interfaces/userInterface";
 import type { signInResponse, signUpRequest } from "./models/authModels";
 

@@ -1,13 +1,28 @@
 {
-  "users": [
+  "notification": [
     {
       "id": "1",
-      "name": "Miguel",
-      "lasname": "Quenta",
-      "nickname": "ElQuenta",
-      "email": "angeloquenta@gmail.com",
-      "password": "d1f1c1l",
-      "role": "user"
+      "userId": "1",
+      "type": "BidPlaced",
+      "message": "Hay una nueva Oferta",
+      "Auction": "Zapatos Nike",
+      "readed": true
+    },
+    {
+      "id": "2",
+      "userId": "1",
+      "type": "NearEnd",
+      "message": "La Subasta esta por Acabar",
+      "Auction": "Zapatos Nike",
+      "readed": false
+    },
+    {
+      "id": "3",
+      "userId": "1",
+      "type": "BidWon",
+      "message": "Ganaste las Subasta",
+      "Auction": "Zapatos Nike",
+      "readed": false
     }
   ]
 }

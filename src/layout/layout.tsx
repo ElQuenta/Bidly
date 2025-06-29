@@ -1,6 +1,7 @@
 import {
   Box,
   CssBaseline,
+  Toolbar,
 } from "@mui/material";
 
 import { Outlet } from "react-router";
@@ -15,6 +16,7 @@ export const Layout = ({ children }: { children?: React.ReactNode }) => {
       <CssBaseline />
       <Box sx={{ flexGrow: 1 }}>
         <Navbar />
+        <Toolbar/>
         <Box component="main" sx={{ p: 3 }}>
           {children ?? <Outlet />}
         </Box>
