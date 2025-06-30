@@ -24,5 +24,401 @@
       "Auction": "Zapatos Nike",
       "readed": false
     }
+  ],
+  "categories": [
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "name": "Electrónica"
+    },
+    {
+      "id": "4fb97a52-6717-4562-a3fd-5b263a73cdf1",
+      "name": "Moda"
+    },
+    {
+      "id": "5ec68b80-7818-4562-c4fe-7d374b84def2",
+      "name": "Hogar"
+    },
+    {
+      "id": "6ad79c10-8919-4562-d5ff-8e485c95efa3",
+      "name": "Deportes"
+    },
+    {
+      "id": "7bd80d24-9120-4562-e600-9f596da6fb04",
+      "name": "Juguetes"
+    },
+    {
+      "id": "8ce91e36-0321-4562-f701-af6a7eb7gc15",
+      "name": "Herramientas"
+    },
+    {
+      "id": "9dfa2f48-1422-4562-0702-bf7b8fc8hd26",
+      "name": "Libros"
+    },
+    {
+      "id": "afea3f5a-2523-4562-1803-cg8a9gd9ie37",
+      "name": "Belleza"
+    },
+    {
+      "id": "b0fb4f6c-3624-4562-2904-dh9b0he0jf48",
+      "name": "Videojuegos"
+    },
+    {
+      "id": "c1gc5f7e-4725-4562-3a05-ei0c1jf1kg59",
+      "name": "Música"
+    },
+    {
+      "id": "d2hd6f8f-5826-4562-4b06-fj1d2kg2lh60",
+      "name": "Películas"
+    },
+    {
+      "id": "e3ie7fab-6927-4562-5b07-gk2e3lh3mi71",
+      "name": "Arte"
+    },
+    {
+      "id": "f4jf8gbc-7a28-4562-6c08-hl3f4mi4nj82",
+      "name": "Coleccionables"
+    },
+    {
+      "id": "a5kg9hcd-8b29-4562-7d09-im4g5nj5ok93",
+      "name": "Salud"
+    },
+    {
+      "id": "b6lh0ied-9c2a-4562-8e10-jn5h6ok6pl04",
+      "name": "Mascotas"
+    },
+    {
+      "id": "c7mi1jfe-0d2b-4562-9f11-ko6i7pl7qm15",
+      "name": "Automotriz"
+    },
+    {
+      "id": "d8nj2kgf-1e2c-4562-0g12-lp7j8qm8rn26",
+      "name": "Jardín"
+    },
+    {
+      "id": "e9ok3lhg-2f2d-4562-1h13-mq8k9rn9so37",
+      "name": "Oficina"
+    },
+    {
+      "id": "fafl4mhi-3g2e-4562-2i14-nr9l0so0tp48",
+      "name": "Viajes"
+    },
+    {
+      "id": "bgym5nij-4h2f-4562-3j15-osk0p1tp1uq59",
+      "name": "Instrumentos"
+    }
+  ],
+  "auctionState": [
+    {
+      "id": "aa111111-5717-4562-b3fc-2c963f66aaa1",
+      "name": "ended"
+    },
+    {
+      "id": "bb222222-6717-4562-a3fd-5b263a73bbb2",
+      "name": "sealed bid auction"
+    },
+    {
+      "id": "cc333333-7818-4562-c4fe-7d374b84ccc3",
+      "name": "current bid"
+    }
+  ],
+  "bidType": [
+    {
+      "id": "dd444444-8919-4562-d5ff-8e485c95ddd4",
+      "name": "fixed increment"
+    },
+    {
+      "id": "ee555555-9120-4562-e600-9f596da6eee5",
+      "name": "percentage increment"
+    },
+    {
+      "id": "ff666666-0321-4562-f701-af6a7eb7fff6",
+      "name": "automatic proxy"
+    }
+  ],
+  "pinAuction": [
+    {
+      "id": "1",
+      "userId": "1",
+      "auctionId": "11111111-1422-4562-0702-bf7b8fc81111"
+    },
+    {
+      "id": "c456eda2-dfc0-42d8-90ff-73cb26f9e98b",
+      "userId": "1",
+      "auctionId": "66666666-6927-4562-5b07-gk2e3lh66666"
+    },
+    {
+      "id": "4642a86e-180a-4845-abcf-68124c873a7c",
+      "userId": "1",
+      "auctionId": "77777777-7a28-4562-6c08-hl3f4mi77777"
+    },
+    {
+      "id": "4328be28-a747-450c-ae5e-7920249815bb",
+      "userId": "1",
+      "auctionId": "44444444-4725-4562-3a05-ei0c1jf44444"
+    }
+  ],
+  "auction": [
+    {
+      "id": "11111111-1422-4562-0702-bf7b8fc81111",
+      "product": {
+        "name": "Cámara DSLR Canon",
+        "image": "https://example.com/canon.jpg",
+        "mainCategory": "Electrónica",
+        "categories": [
+          "Electrónica",
+          "Arte",
+          "Viajes"
+        ]
+      },
+      "state": "current bid",
+      "endDate": "2025-07-20T15:00:00Z",
+      "bidType": "fixed increment",
+      "price": 250
+    },
+    {
+      "id": "22222222-2523-4562-1803-cg8a9gd92222",
+      "product": {
+        "name": "Zapatos Deportivos Nike",
+        "image": "https://example.com/nike.jpg",
+        "mainCategory": "Moda",
+        "categories": [
+          "Moda",
+          "Deportes"
+        ]
+      },
+      "state": "sealed bid auction",
+      "endDate": "2025-07-05T11:00:00Z",
+      "bidType": "percentage increment",
+      "price": 120
+    },
+    {
+      "id": "33333333-3624-4562-2904-dh9b0he03333",
+      "product": {
+        "name": "Taladro Bosch",
+        "image": "https://example.com/bosch.jpg",
+        "mainCategory": "Herramientas",
+        "categories": [
+          "Herramientas",
+          "Hogar"
+        ]
+      },
+      "state": "ended",
+      "endDate": "2025-06-01T09:00:00Z",
+      "bidType": "automatic proxy",
+      "price": 75
+    },
+    {
+      "id": "44444444-4725-4562-3a05-ei0c1jf44444",
+      "product": {
+        "name": "Libro de ciencia ficción",
+        "image": "https://example.com/libro.jpg",
+        "mainCategory": "Libros",
+        "categories": [
+          "Libros",
+          "Arte",
+          "Música"
+        ]
+      },
+      "state": "current bid",
+      "endDate": "2025-07-15T20:30:00Z",
+      "bidType": "fixed increment",
+      "price": 60
+    },
+    {
+      "id": "55555555-5826-4562-4b06-fj1d2kg55555",
+      "product": {
+        "name": "Set de pinceles de arte",
+        "image": "https://example.com/pinceles.jpg",
+        "mainCategory": "Arte",
+        "categories": [
+          "Arte",
+          "Hogar"
+        ]
+      },
+      "state": "sealed bid auction",
+      "endDate": "2025-07-10T14:45:00Z",
+      "bidType": "percentage increment",
+      "price": 45
+    },
+    {
+      "id": "66666666-6927-4562-5b07-gk2e3lh66666",
+      "product": {
+        "name": "Guitarra acústica",
+        "image": "https://example.com/guitarra.jpg",
+        "mainCategory": "Instrumentos",
+        "categories": [
+          "Instrumentos",
+          "Música"
+        ]
+      },
+      "state": "current bid",
+      "endDate": "2025-07-22T18:00:00Z",
+      "bidType": "automatic proxy",
+      "price": 300
+    },
+    {
+      "id": "77777777-7a28-4562-6c08-hl3f4mi77777",
+      "product": {
+        "name": "Accesorios de jardín",
+        "image": "https://example.com/jardin.jpg",
+        "mainCategory": "Jardín",
+        "categories": [
+          "Jardín",
+          "Hogar"
+        ]
+      },
+      "state": "current bid",
+      "endDate": "2025-08-01T12:00:00Z",
+      "bidType": "fixed increment",
+      "price": 80
+    },
+    {
+      "id": "88888888-8b29-4562-7d09-im4g5nj88888",
+      "product": {
+        "name": "Consola PlayStation",
+        "image": "https://example.com/ps5.jpg",
+        "mainCategory": "Videojuegos",
+        "categories": [
+          "Videojuegos",
+          "Entretenimiento"
+        ]
+      },
+      "state": "sealed bid auction",
+      "endDate": "2025-07-18T21:00:00Z",
+      "bidType": "percentage increment",
+      "price": 220
+    },
+    {
+      "id": "99999999-9c2a-4562-8e10-jn5h6ok99999",
+      "product": {
+        "name": "Set de maquillaje",
+        "image": "https://example.com/maquillaje.jpg",
+        "mainCategory": "Belleza",
+        "categories": [
+          "Belleza",
+          "Salud"
+        ]
+      },
+      "state": "current bid",
+      "endDate": "2025-07-25T16:15:00Z",
+      "bidType": "automatic proxy",
+      "price": 150
+    },
+    {
+      "id": "aaaaaaaa-ad2b-4562-9f11-ko6i7plaaaa",
+      "product": {
+        "name": "Figura coleccionable",
+        "image": "https://example.com/figura.jpg",
+        "mainCategory": "Coleccionables",
+        "categories": [
+          "Coleccionables",
+          "Juguetes"
+        ]
+      },
+      "state": "sealed bid auction",
+      "endDate": "2025-07-12T13:00:00Z",
+      "bidType": "fixed increment",
+      "price": 95
+    },
+    {
+      "id": "bbbbbbbb-be2c-4562-0g12-lp7j8qmbbbb",
+      "product": {
+        "name": "Laptop Dell",
+        "image": "https://example.com/dell.jpg",
+        "mainCategory": "Electrónica",
+        "categories": [
+          "Electrónica",
+          "Oficina"
+        ]
+      },
+      "state": "current bid",
+      "endDate": "2025-07-30T23:59:59Z",
+      "bidType": "percentage increment",
+      "price": 400
+    },
+    {
+      "id": "cccccccc-cf2d-4562-1h13-mq8k9rncccc",
+      "product": {
+        "name": "Set de viaje",
+        "image": "https://example.com/viaje.jpg",
+        "mainCategory": "Viajes",
+        "categories": [
+          "Viajes",
+          "Hogar"
+        ]
+      },
+      "state": "sealed bid auction",
+      "endDate": "2025-07-28T07:30:00Z",
+      "bidType": "automatic proxy",
+      "price": 65
+    }
+  ],
+  "auctionBid": [
+    {
+      "id": "bid-1111",
+      "userId": "1",
+      "auctionId": "11111111-1422-4562-0702-bf7b8fc81111",
+      "bid": 260
+    },
+    {
+      "id": "bid-2222",
+      "userId": "1",
+      "auctionId": "22222222-2523-4562-1803-cg8a9gd92222",
+      "bid": 130
+    },
+    {
+      "id": "bid-4444",
+      "userId": "1",
+      "auctionId": "44444444-4725-4562-3a05-ei0c1jf44444",
+      "bid": 65
+    },
+    {
+      "id": "bid-5555",
+      "userId": "1",
+      "auctionId": "55555555-5826-4562-4b06-fj1d2kg55555",
+      "bid": 50
+    },
+    {
+      "id": "bid-6666",
+      "userId": "1",
+      "auctionId": "66666666-6927-4562-5b07-gk2e3lh66666",
+      "bid": 310
+    },
+    {
+      "id": "bid-7777",
+      "userId": "1",
+      "auctionId": "77777777-7a28-4562-6c08-hl3f4mi77777",
+      "bid": 85
+    },
+    {
+      "id": "bid-8888",
+      "userId": "1",
+      "auctionId": "88888888-8b29-4562-7d09-im4g5nj88888",
+      "bid": 230
+    },
+    {
+      "id": "bid-9999",
+      "userId": "1",
+      "auctionId": "99999999-9c2a-4562-8e10-jn5h6ok99999",
+      "bid": 160
+    },
+    {
+      "id": "bid-aaaa",
+      "userId": "1",
+      "auctionId": "aaaaaaaa-ad2b-4562-9f11-ko6i7plaaaa",
+      "bid": 100
+    },
+    {
+      "id": "bid-bbbb",
+      "userId": "1",
+      "auctionId": "bbbbbbbb-be2c-4562-0g12-lp7j8qmbbbb",
+      "bid": 410
+    },
+    {
+      "id": "bid-cccc",
+      "userId": "1",
+      "auctionId": "cccccccc-cf2d-4562-1h13-mq8k9rncccc",
+      "bid": 70
+    }
   ]
 }

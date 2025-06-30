@@ -25,7 +25,7 @@ export const AppRoutes = () => {
             <Layout />
           </AuthGuard>
         }>
-          <Route path='auctionRoom' element={<AuctionRoom />} />
+          <Route path='auctionRoom/:id' element={<AuctionRoom />} />
           <Route element={<RoleGuard />}>
             <Route path='adminPanel' element={<AdminPanel />} />
             <Route path='userAdmin' element={

@@ -1,0 +1,23 @@
+export interface PinAuctionRequest {
+  userId: string;
+  auctionId: string;
+}
+
+export interface AuctionBidRequest {
+  userId: string;
+  auctionId: string;
+  bid: number
+}
+
+export interface AuctionRequest {
+  product: {
+    name: string;
+    image: string;
+    mainCategory: string;
+    categories: string[]
+  };
+  state: string;
+  endDate: Date;
+  bidType: string;
+  price: number;
+}

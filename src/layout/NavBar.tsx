@@ -88,7 +88,7 @@ const Navbar = () => {
                 <strong>Notificaciones</strong> ({notReaded.length} sin leer)
               </Grid>
               <Grid size={4} display="flex" justifyContent="flex-end">
-                <Avatar onClick={handleRefresh} sx={(theme) => ({ cursor: 'pointer', bgcolor: theme.palette.secondary.main })}>
+                <Avatar onClick={handleRefresh} sx={(theme) => ({ cursor: 'pointer', bgcolor: theme.palette.primary.main })}>
                   <Cached />
                 </Avatar>
               </Grid>
