@@ -142,19 +142,19 @@
       "auctionId": "11111111-1422-4562-0702-bf7b8fc81111"
     },
     {
-      "id": "c456eda2-dfc0-42d8-90ff-73cb26f9e98b",
+      "id": "2394ba38-9544-4960-8b9e-3fbc6a4bca97",
+      "userId": "1",
+      "auctionId": "44444444-4725-4562-3a05-ei0c1jf44444"
+    },
+    {
+      "id": "47bafc9e-4b70-498f-81d2-880cf8f2d253",
       "userId": "1",
       "auctionId": "66666666-6927-4562-5b07-gk2e3lh66666"
     },
     {
-      "id": "4642a86e-180a-4845-abcf-68124c873a7c",
+      "id": "95592a11-1bea-428e-8023-c630783d095a",
       "userId": "1",
       "auctionId": "77777777-7a28-4562-6c08-hl3f4mi77777"
-    },
-    {
-      "id": "4328be28-a747-450c-ae5e-7920249815bb",
-      "userId": "1",
-      "auctionId": "44444444-4725-4562-3a05-ei0c1jf44444"
     }
   ],
   "auction": [
@@ -162,13 +162,14 @@
       "id": "11111111-1422-4562-0702-bf7b8fc81111",
       "product": {
         "name": "Cámara DSLR Canon",
-        "image": "https://example.com/canon.jpg",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Xn7t00-OrmRqURIV9hKsnqs3qc8sXHFH2w&s",
         "mainCategory": "Electrónica",
         "categories": [
           "Electrónica",
           "Arte",
           "Viajes"
-        ]
+        ],
+        "description": "Cámara réflex digital Canon con sensor de alta resolución, ideal para fotografía profesional y grabación en HD."
       },
       "state": "current bid",
       "endDate": "2025-07-20T15:00:00Z",
@@ -179,12 +180,13 @@
       "id": "22222222-2523-4562-1803-cg8a9gd92222",
       "product": {
         "name": "Zapatos Deportivos Nike",
-        "image": "https://example.com/nike.jpg",
+        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/s6dp2gck3oukxj9csz5y/AIR+MAX+270.png",
         "mainCategory": "Moda",
         "categories": [
           "Moda",
           "Deportes"
-        ]
+        ],
+        "description": "Zapatos deportivos Nike diseñados para brindar confort y rendimiento, perfectos para entrenamiento y uso diario."
       },
       "state": "sealed bid auction",
       "endDate": "2025-07-05T11:00:00Z",
@@ -195,12 +197,13 @@
       "id": "33333333-3624-4562-2904-dh9b0he03333",
       "product": {
         "name": "Taladro Bosch",
-        "image": "https://example.com/bosch.jpg",
+        "image": "https://www.hi.com.bo/media/catalog/product/cache/14571f4b1adf7f9633f3acff66f6808e/t/a/taladro-con-percusion-gsb-550re-bosch-1.jpg",
         "mainCategory": "Herramientas",
         "categories": [
           "Herramientas",
           "Hogar"
-        ]
+        ],
+        "description": "Taladro Bosch con función de percusión, potente motor y diseño ergonómico para tareas de bricolaje y construcción."
       },
       "state": "ended",
       "endDate": "2025-06-01T09:00:00Z",
@@ -211,13 +214,14 @@
       "id": "44444444-4725-4562-3a05-ei0c1jf44444",
       "product": {
         "name": "Libro de ciencia ficción",
-        "image": "https://example.com/libro.jpg",
+        "image": "https://spikeybits.com/wp-content/uploads/2022/05/Horus-Heresy-black-library-made-to-order.jpg",
         "mainCategory": "Libros",
         "categories": [
           "Libros",
           "Arte",
           "Música"
-        ]
+        ],
+        "description": "Novela de ciencia ficción ambientada en un universo futurista, con una narrativa atrapante y mundos épicos."
       },
       "state": "current bid",
       "endDate": "2025-07-15T20:30:00Z",
@@ -228,12 +232,13 @@
       "id": "55555555-5826-4562-4b06-fj1d2kg55555",
       "product": {
         "name": "Set de pinceles de arte",
-        "image": "https://example.com/pinceles.jpg",
+        "image": "https://imgs.search.brave.com/HTVcpSYTo9ormpBQJrhMEfq7eemYaZagUQCRIEcl1jU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/Xzk5NjY3MS1NTFU3/MTEzMTUxODgwMF8w/ODIwMjMtRS53ZWJw",
         "mainCategory": "Arte",
         "categories": [
           "Arte",
           "Hogar"
-        ]
+        ],
+        "description": "Set de pinceles profesionales para pintura al óleo, acrílica y acuarela. Cerdas suaves y mangos resistentes."
       },
       "state": "sealed bid auction",
       "endDate": "2025-07-10T14:45:00Z",
@@ -244,12 +249,13 @@
       "id": "66666666-6927-4562-5b07-gk2e3lh66666",
       "product": {
         "name": "Guitarra acústica",
-        "image": "https://example.com/guitarra.jpg",
+        "image": "https://imgs.search.brave.com/lPZdB41pZyeSFZnkiKhTXLft32pIzxoEEhykBJUW6nQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/Xzg0Nzc1Ni1NTE01/MDg5NzMyMjY3NV8w/NzIwMjItVi1ndWl0/YXJyYS1lbGVjdHJv/LWFjdXN0aWNhLTEy/LWN1ZXJkYXMtZG9j/ZXJvbGEtaWJhbmV6/LWFlZzUwMTIud2Vi/cA",
         "mainCategory": "Instrumentos",
         "categories": [
           "Instrumentos",
           "Música"
-        ]
+        ],
+        "description": "Guitarra acústica de madera con excelente resonancia, ideal para músicos principiantes y avanzados."
       },
       "state": "current bid",
       "endDate": "2025-07-22T18:00:00Z",
@@ -260,12 +266,13 @@
       "id": "77777777-7a28-4562-6c08-hl3f4mi77777",
       "product": {
         "name": "Accesorios de jardín",
-        "image": "https://example.com/jardin.jpg",
+        "image": "https://img.freepik.com/foto-gratis/maceta-regadera_23-2148905231.jpg?semt=ais_hybrid&w=740",
         "mainCategory": "Jardín",
         "categories": [
           "Jardín",
           "Hogar"
-        ]
+        ],
+        "description": "Kit de jardinería completo con herramientas ergonómicas, ideal para el cuidado de plantas y flores en casa."
       },
       "state": "current bid",
       "endDate": "2025-08-01T12:00:00Z",
@@ -276,12 +283,13 @@
       "id": "88888888-8b29-4562-7d09-im4g5nj88888",
       "product": {
         "name": "Consola PlayStation",
-        "image": "https://example.com/ps5.jpg",
+        "image": "https://212global.com/wp-content/uploads/2025/02/679b6712d577ebf6c1f7677d_thumbnail-600x600.png",
         "mainCategory": "Videojuegos",
         "categories": [
           "Videojuegos",
           "Entretenimiento"
-        ]
+        ],
+        "description": "Consola de videojuegos de última generación con gráficos ultra HD y una amplia biblioteca de juegos exclusivos."
       },
       "state": "sealed bid auction",
       "endDate": "2025-07-18T21:00:00Z",
@@ -292,12 +300,13 @@
       "id": "99999999-9c2a-4562-8e10-jn5h6ok99999",
       "product": {
         "name": "Set de maquillaje",
-        "image": "https://example.com/maquillaje.jpg",
+        "image": "https://m.media-amazon.com/images/I/7181-vy8HUL._SL1500_.jpg",
         "mainCategory": "Belleza",
         "categories": [
           "Belleza",
           "Salud"
-        ]
+        ],
+        "description": "Completo set de maquillaje profesional con tonos variados, ideal para cualquier tipo de piel y ocasión."
       },
       "state": "current bid",
       "endDate": "2025-07-25T16:15:00Z",
@@ -308,12 +317,13 @@
       "id": "aaaaaaaa-ad2b-4562-9f11-ko6i7plaaaa",
       "product": {
         "name": "Figura coleccionable",
-        "image": "https://example.com/figura.jpg",
+        "image": "https://m.media-amazon.com/images/I/71k2W6jV9VL._UF894,1000_QL80_.jpg",
         "mainCategory": "Coleccionables",
         "categories": [
           "Coleccionables",
           "Juguetes"
-        ]
+        ],
+        "description": "Figura de colección detallada, ideal para fans y coleccionistas. Hecha con materiales duraderos y pintada a mano."
       },
       "state": "sealed bid auction",
       "endDate": "2025-07-12T13:00:00Z",
@@ -324,12 +334,13 @@
       "id": "bbbbbbbb-be2c-4562-0g12-lp7j8qmbbbb",
       "product": {
         "name": "Laptop Dell",
-        "image": "https://example.com/dell.jpg",
+        "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/page/category/laptop/dell-pro-laptops-category-image-800x620.png?fmt=png-alpha&wid=800&hei=620",
         "mainCategory": "Electrónica",
         "categories": [
           "Electrónica",
           "Oficina"
-        ]
+        ],
+        "description": "Laptop Dell con procesador de alto rendimiento, pantalla Full HD y batería de larga duración para productividad."
       },
       "state": "current bid",
       "endDate": "2025-07-30T23:59:59Z",
@@ -340,12 +351,13 @@
       "id": "cccccccc-cf2d-4562-1h13-mq8k9rncccc",
       "product": {
         "name": "Set de viaje",
-        "image": "https://example.com/viaje.jpg",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHX48NBoJBfGVEyA2XPdLaUy0VtGw_lt5oPw&s",
         "mainCategory": "Viajes",
         "categories": [
           "Viajes",
           "Hogar"
-        ]
+        ],
+        "description": "Set completo de accesorios para viaje, incluye organizadores, almohada de cuello y bolsa impermeable."
       },
       "state": "sealed bid auction",
       "endDate": "2025-07-28T07:30:00Z",

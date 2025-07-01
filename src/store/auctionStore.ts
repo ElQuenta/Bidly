@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 import type { AuctionStoreInterface } from "./interfaces/auctionStoreInterface"
-import { fetchAuction, fetchAuctionState, fetchBidType, fetchCategories, getAuctionById, getPinAuctionById, removePinAuction, savePinAuction } from "../services/auctionService";
+import { fetchAuction, fetchAuctionState, fetchBidType, fetchCategories, getAuctionHistory, getPinAuctionById, removePinAuction, savePinAuction } from "../services/auctionService";
 
 export const useAuctionsCatalogStore = create<AuctionStoreInterface>((set) => ({
   auctions: [],
@@ -28,7 +28,7 @@ export const useAuctionsCatalogStore = create<AuctionStoreInterface>((set) => ({
         bidTypesResponse
       ] = await Promise.all([
         fetchAuction(),
-        getAuctionById(userId),
+        getAuctionHistory(userId),
         getPinAuctionById(userId),
         fetchAuctionState(),
         fetchCategories(),

@@ -39,7 +39,6 @@ export const useAuctionsCatalog = () => {
 
     if (pinnedCatalog.includes(auction)) {
       const existingPin = pinnedAuctions.find(p => p.auctionId === auction.id);
-      console.log(existingPin)
       if (existingPin) {
         removePin(existingPin.id);
       }

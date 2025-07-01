@@ -14,7 +14,8 @@ export interface AuctionRequest {
     name: string;
     image: string;
     mainCategory: string;
-    categories: string[]
+    categories: string[];
+    description: string;
   };
   state: string;
   endDate: Date;

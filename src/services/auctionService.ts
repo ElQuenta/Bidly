@@ -63,7 +63,7 @@ export const fetchAuction = async (): Promise<Auction[]> => {
   }
 }
 
-export const getAuctionById = async (userId: string): Promise<Auction[]> => {
+export const getAuctionHistory = async (userId: string): Promise<Auction[]> => {
   try {
     const { data: bids } = await jsonServerInstance.get<AuctionBid[]>(AUCTION_BID_PATH, { params: { userId: userId } })
     const auctionIds = [...new Set(bids.map(bid => bid.auctionId))];
@@ -73,6 +73,19 @@ export const getAuctionById = async (userId: string): Promise<Auction[]> => {
     const queryParams = auctionIds.map(id => `id=${id}`).join('&');
     const { data } = await jsonServerInstance.get<Auction[]>(`${AUCTION_PATH}?${queryParams}`);
 
+    return data
+  }
+  catch (err) {
+    if (err instanceof Error) {
+      throw new Error(`Errror Fetching Auctions ${err.message}`);
+    }
+    throw err
+  }
+}
+
+export const getAuctionById = async (auctionId: string): Promise<Auction> => {
+  try {
+    const { data } = await jsonServerInstance.get<Auction>(`${AUCTION_PATH}/${auctionId}`);
     return data
   }
   catch (err) {
@@ -153,7 +166,7 @@ export const savePinAuction = async ({ userId, auctionId }: PinAuctionRequest): 
   }
 }
 
-export const removePinAuction = async ( pinAuctionId: string): Promise<void> => {
+export const removePinAuction = async (pinAuctionId: string): Promise<void> => {
   try {
     await jsonServerInstance.delete(`${PIN_AUCTION_PATH}/${pinAuctionId}`)
   }

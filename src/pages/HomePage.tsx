@@ -8,7 +8,7 @@ import AuctionItem from "../components/AuctionItem";
 import { useAuctionsCatalog } from "../hooks/useAuctionsCatalog";
 
 export default function HomePage() {
-  const { data, filterData, filters, isLoading, pinActions, navAuction} = useAuctionsCatalog()
+  const { data, filterData, filters, isLoading, pinActions, navAuction } = useAuctionsCatalog()
 
   return (
     isLoading ? (
@@ -22,29 +22,34 @@ export default function HomePage() {
       </Container>
     ) : (
       <Container sx={{ py: 4 }}>
-        <Box sx={{ position: 'relative', textAlign: 'center', mt: 2, mb: 4 }}>
-          <Divider>
-            <Typography variant="h6" sx={{ letterSpacing: 2 }}>
-              FIJADOS
-            </Typography>
-          </Divider>
-          <KeyboardArrowDownIcon sx={{ position: 'absolute', bottom: -12, left: '50%', transform: 'translateX(-50%)', color: 'primary.main' }} />
-        </Box>
-        <Grid container spacing={2} sx={{ mb: 4 }}>
-          {data.pinnedCatalog.map((auction) => (
-            <Grid key={auction.id} size={{ xs: 12, sm: 6, md: 3 }}>
-              <AuctionItem
-                image={auction.product.image}
-                title={auction.product.name}
-                auctionState={auction.state}
-                bidType={auction.bidType}
-                timeLeft={new Date(auction.endDate)}
-                onPinClick={() => pinActions(auction)}
-                onClick={()=>navAuction(auction.id)}
-              />
+        {data.pinnedCatalog.length > 0 && (
+          <>
+            <Box sx={{ position: 'relative', textAlign: 'center', mt: 2, mb: 4 }}>
+              <Divider>
+                <Typography variant="h6" sx={{ letterSpacing: 2 }}>
+                  FIJADOS
+                </Typography>
+              </Divider>
+              <KeyboardArrowDownIcon sx={{ position: 'absolute', bottom: -12, left: '50%', transform: 'translateX(-50%)', color: 'primary.main' }} />
+            </Box>
+            <Grid container spacing={2} sx={{ mb: 4 }}>
+              {data.pinnedCatalog.map((auction) => (
+                <Grid key={auction.id} size={{ xs: 12, sm: 6, md: 3 }}>
+                  <AuctionItem
+                    image={auction.product.image}
+                    title={auction.product.name}
+                    auctionState={auction.state}
+                    bidType={auction.bidType}
+                    timeLeft={new Date(auction.endDate)}
+                    onPinClick={() => pinActions(auction)}
+                    onClick={() => navAuction(auction.id)}
+                  />
+                </Grid>
+              ))}
             </Grid>
-          ))}
-        </Grid>
+          </>
+        )}
+
 
         <Box sx={{ position: 'relative', textAlign: 'center', mt: 2, mb: 3 }}>
           <Divider>
@@ -145,7 +150,7 @@ export default function HomePage() {
                 bidType={auction.bidType}
                 timeLeft={new Date(auction.endDate)}
                 onPinClick={() => pinActions(auction)}
-                onClick={()=>navAuction(auction.id)}
+                onClick={() => navAuction(auction.id)}
               />
             </Grid>
           ))}

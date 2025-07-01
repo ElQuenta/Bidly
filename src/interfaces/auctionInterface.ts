@@ -25,7 +25,8 @@ export interface Auction {
     name: string;
     image: string;
     mainCategory: string;
-    categories: string[]
+    categories: string[];
+    description: string;
   };
   state: string;
   endDate: string;
