@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 import type { AuctionStoreInterface } from "./interfaces/auctionStoreInterface"
-import { fetchAuction, fetchAuctionState, fetchBidType, fetchCategories, getAuctionHistory, getPinAuctionById, removePinAuction, savePinAuction } from "../services/auctionService";
+import { closeAuction, deleteAuction, editAuction, fetchAuction, fetchAuctionState, fetchBidType, fetchCategories, getAuctionHistory, getPinAuctionById, publishAuction, removePinAuction, savePinAuction } from "../services/auctionService";
 
 export const useAuctionsCatalogStore = create<AuctionStoreInterface>((set) => ({
   auctions: [],
@@ -94,5 +94,73 @@ export const useAuctionsCatalogStore = create<AuctionStoreInterface>((set) => ({
     finally {
       set({ isLoading: false });
     }
+  },
+    publishAuction: async (auctionRequest) => {
+    try {
+      set({ isLoading: true });
+      const newAuction = await publishAuction(auctionRequest);
+      set((state) => ({
+        auctions: [...state.auctions, newAuction],
+        error: null
+      }));
+    } catch (err) {
+      if (err instanceof Error) {
+        set({ error: err.message });
+      }
+    } finally {
+      set({ isLoading: false });
+    }
+  },
+
+  editAuction: async (auctionEdit) => {
+    try {
+      set({ isLoading: true });
+      const updatedAuction = await editAuction(auctionEdit);
+      set((state) => ({
+        auctions: state.auctions.map((a) => a.id === updatedAuction.id ? updatedAuction : a),
+        error: null
+      }));
+    } catch (err) {
+      if (err instanceof Error) {
+        set({ error: err.message });
+      }
+    } finally {
+      set({ isLoading: false });
+    }
+  },
+
+  deleteAuction: async (auctionId) => {
+    try {
+      set({ isLoading: true });
+      await deleteAuction(auctionId);
+      set((state) => ({
+        auctions: state.auctions.filter((a) => a.id !== auctionId),
+        error: null
+      }));
+    } catch (err) {
+      if (err instanceof Error) {
+        set({ error: err.message });
+      }
+    } finally {
+      set({ isLoading: false });
+    }
+  },
+
+  closeAuction: async (auctionId) => {
+    try {
+      set({ isLoading: true });
+      const closedAuction = await closeAuction(auctionId);
+      set((state) => ({
+        auctions: state.auctions.map((a) => a.id === closedAuction.id ? closedAuction : a),
+        error: null
+      }));
+    } catch (err) {
+      if (err instanceof Error) {
+        set({ error: err.message });
+      }
+    } finally {
+      set({ isLoading: false });
+    }
   }
+
 }))

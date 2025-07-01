@@ -22,3 +22,18 @@ export interface AuctionRequest {
   bidType: string;
   price: number;
 }
+
+export interface AuctionEditRequest {
+  product: {
+    name: string;
+    image: string;
+    mainCategory: string;
+    categories: string[];
+    description: string;
+  };
+  id:string;
+  state: string;
+  endDate: Date;
+  bidType: string;
+  price: number;
+}

@@ -1,4 +1,3 @@
-import Countdown, { type CountdownRendererFn } from 'react-countdown';
 import {
   Card,
   CardMedia,
@@ -9,17 +8,74 @@ import {
   CardActionArea,
   Grid,
 } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import PushPinIcon from '@mui/icons-material/PushPin';
+import Countdown, { type CountdownRendererFn } from 'react-countdown';
+import type { JSX } from 'react';
+import {
+  PushPin as PushPinIcon,
+  Search as SearchIcon,
+  Devices as DevicesIcon,
+  Checkroom as FashionIcon,
+  Chair as HomeIcon,
+  SportsSoccer as SportsIcon,
+  Toys as ToysIcon,
+  Build as ToolsIcon,
+  MenuBook as BooksIcon,
+  Face as BeautyIcon,
+  SportsEsports as GamesIcon,
+  MusicNote as MusicIcon,
+  Movie as MoviesIcon,
+  Brush as ArtIcon,
+  AutoAwesome as CollectiblesIcon,
+  Favorite as HealthIcon,
+  Pets as PetsIcon,
+  DirectionsCar as AutomotiveIcon,
+  Yard as GardenIcon,
+  Work as OfficeIcon,
+  FlightTakeoff as TravelIcon,
+  Piano as InstrumentsIcon,
+  Edit as EditIcon,
+  Delete as DeleteIcon
+} from "@mui/icons-material";
+
+const iconCategory = (category: string) => {
+  const menu: { [key: string]: JSX.Element } = {
+    "Electrónica": <DevicesIcon />,
+    "Moda": <FashionIcon />,
+    "Hogar": <HomeIcon />,
+    "Deportes": <SportsIcon />,
+    "Juguetes": <ToysIcon />,
+    "Herramientas": <ToolsIcon />,
+    "Libros": <BooksIcon />,
+    "Belleza": <BeautyIcon />,
+    "Videojuegos": <GamesIcon />,
+    "Música": <MusicIcon />,
+    "Películas": <MoviesIcon />,
+    "Arte": <ArtIcon />,
+    "Coleccionables": <CollectiblesIcon />,
+    "Salud": <HealthIcon />,
+    "Mascotas": <PetsIcon />,
+    "Automotriz": <AutomotiveIcon />,
+    "Jardín": <GardenIcon />,
+    "Oficina": <OfficeIcon />,
+    "Viajes": <TravelIcon />,
+    "Instrumentos": <InstrumentsIcon />,
+  };
+  return menu[category] || <SearchIcon />;
+};
 
 interface AuctionItemProps {
   image: string;
   title: string;
   auctionState: string;
+  category: string;
   bidType: string;
   timeLeft: Date;
+  visibility: boolean;
   onClick?: () => void;
   onPinClick?: () => void;
+  onEditClick?: () => void;
+  onDeleteClick?: () => void;
+  onClose?: ()=>void;
 }
 
 const AuctionItem = ({
@@ -27,9 +83,14 @@ const AuctionItem = ({
   title,
   auctionState,
   bidType,
+  category,
+  visibility,
   timeLeft: endDate,
   onClick,
   onPinClick,
+  onEditClick,
+  onDeleteClick,
+  onClose
 }: AuctionItemProps) => {
   const renderer: CountdownRendererFn = ({
     days,
@@ -38,8 +99,8 @@ const AuctionItem = ({
     seconds,
     completed,
   }) => {
-
     if (completed) {
+      onClose?.()
       return (
         <Box sx={{ p: 1 }}>
           <Typography variant="body2" align="center" color="text.secondary">
@@ -105,13 +166,44 @@ const AuctionItem = ({
         >
           <PushPinIcon fontSize="small" />
         </IconButton>
+        <IconButton size="small" sx={{ bgcolor: 'white' }}>
+          {iconCategory(category)}
+        </IconButton>
+      </Box>
+      {visibility && (<Box
+        sx={{
+          position: 'absolute',
+          top: 8,
+          right: 8,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 1,
+          zIndex: 2,
+        }}
+      >
         <IconButton
           size="small"
           sx={{ bgcolor: 'white' }}
+          onClick={(e) => {
+            e.stopPropagation();
+            onEditClick?.();
+          }}
         >
-          <SearchIcon fontSize="small" />
+          <EditIcon fontSize="small" />
         </IconButton>
-      </Box>
+        <IconButton
+          size="small"
+          sx={{ bgcolor: 'white' }}
+          onClick={(e) => {
+            e.stopPropagation();
+            onDeleteClick?.();
+          }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+      </Box>)
+      }
+
       <CardActionArea onClick={onClick}>
         <CardMedia
           component="img"
@@ -120,7 +212,7 @@ const AuctionItem = ({
           alt={title}
           sx={{ objectFit: 'contain', p: 2 }}
         />
-        <Countdown date={endDate} renderer={renderer} onComplete={() => { /* callback opcional */ }} />
+        <Countdown date={endDate} renderer={renderer} />
         <CardContent>
           <Typography variant="h6" component="div" align="center">
             {title}

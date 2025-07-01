@@ -40,3 +40,18 @@ export interface AuctionBid {
   auctionId: string;
   bid: number
 }
+
+export interface AuctionFormValues {
+  bidType: string;
+  image: File | null;
+  imagePreview: string | null;
+  product: {
+    name: string;
+    mainCategory: string;
+    categories: string[];
+    description: string;
+  };
+  state: string;
+  endDate: Date | string;
+  price: number;
+}

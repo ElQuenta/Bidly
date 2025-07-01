@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import jsonServerInstance from "../api/jsonServerInstance";
 import type { Auction, AuctionBid, AuctionState, BidType, Category, PinAuction } from "../interfaces/auctionInterface";
-import type { AuctionRequest, AuctionBidRequest, PinAuctionRequest } from "./models/auctionModels"
+import type { AuctionRequest, AuctionBidRequest, PinAuctionRequest, AuctionEditRequest } from "./models/auctionModels"
 
 const CATEGORY_PATH = "categories";
 const AUCTION_STATE_PATH = "auctionState";
@@ -65,23 +65,28 @@ export const fetchAuction = async (): Promise<Auction[]> => {
 
 export const getAuctionHistory = async (userId: string): Promise<Auction[]> => {
   try {
-    const { data: bids } = await jsonServerInstance.get<AuctionBid[]>(AUCTION_BID_PATH, { params: { userId: userId } })
-    const auctionIds = [...new Set(bids.map(bid => bid.auctionId))];
+    const { data: bids } = await jsonServerInstance.get<AuctionBid[]>(AUCTION_BID_PATH, {
+      params: { userId }
+    });
 
+    const auctionIds = [...new Set(bids.map(b => b.auctionId))];
     if (auctionIds.length === 0) return [];
 
-    const queryParams = auctionIds.map(id => `id=${id}`).join('&');
-    const { data } = await jsonServerInstance.get<Auction[]>(`${AUCTION_PATH}?${queryParams}`);
+    const { data: allAuctions } = await jsonServerInstance.get<Auction[]>(AUCTION_PATH);
 
-    return data
-  }
-  catch (err) {
+    const userAuctions = allAuctions.filter(auction =>
+      auctionIds.includes(auction.id)
+    );
+
+    return userAuctions;
+  } catch (err) {
     if (err instanceof Error) {
-      throw new Error(`Errror Fetching Auctions ${err.message}`);
+      throw new Error(`Error fetching auctions: ${err.message}`);
     }
-    throw err
+    throw err;
   }
-}
+};
+
 
 export const getAuctionById = async (auctionId: string): Promise<Auction> => {
   try {
@@ -116,6 +121,46 @@ export const publishAuction = async ({ bidType, endDate, price, product, state }
     throw err
   }
 }
+
+export const editAuction = async ({
+  id,
+  bidType,
+  endDate,
+  price,
+  product,
+  state
+}: AuctionEditRequest): Promise<Auction> => {
+  try {
+    const auction: Auction = {
+      id,
+      bidType,
+      endDate: endDate.toISOString(),
+      price,
+      product,
+      state
+    };
+
+    const { data } = await jsonServerInstance.put<Auction>(`${AUCTION_PATH}/${id}`, auction);
+    return data;
+  } catch (err) {
+    if (err instanceof Error) {
+      throw new Error(`Error editing auction: ${err.message}`);
+    }
+    throw err;
+  }
+};
+
+export const deleteAuction = async (auctionId: string): Promise<void> => {
+  try {
+    await jsonServerInstance.delete(`${AUCTION_PATH}/${auctionId}`);
+  } catch (err) {
+    if (err instanceof Error) {
+      throw new Error(`Error deleting auction: ${err.message}`);
+    }
+    throw err;
+  }
+};
+
 
 export const closeAuction = async (auctionId: string): Promise<Auction> => {
   try {
@@ -199,7 +244,7 @@ export const saveAuctionBid = async ({ userId, auctionId, bid }: AuctionBidReque
       auctionId,
       bid
     }
-    const { data } = await jsonServerInstance.post<AuctionBid>(PIN_AUCTION_PATH, pinAuction)
+    const { data } = await jsonServerInstance.post<AuctionBid>(AUCTION_BID_PATH, pinAuction)
     return data
   }
   catch (err) {

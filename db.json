@@ -155,6 +155,11 @@
       "id": "95592a11-1bea-428e-8023-c630783d095a",
       "userId": "1",
       "auctionId": "77777777-7a28-4562-6c08-hl3f4mi77777"
+    },
+    {
+      "id": "fe80b6ae-372e-400d-9be2-53afac7b9680",
+      "userId": "b7499914-4b55-491e-aaea-99a72a8c9c3d",
+      "auctionId": "44444444-4725-4562-3a05-ei0c1jf44444"
     }
   ],
   "auction": [
@@ -205,7 +210,7 @@
         ],
         "description": "Taladro Bosch con función de percusión, potente motor y diseño ergonómico para tareas de bricolaje y construcción."
       },
-      "state": "ended",
+      "state": "sealed bid auction",
       "endDate": "2025-06-01T09:00:00Z",
       "bidType": "automatic proxy",
       "price": 75
@@ -431,6 +436,18 @@
       "userId": "1",
       "auctionId": "cccccccc-cf2d-4562-1h13-mq8k9rncccc",
       "bid": 70
+    },
+    {
+      "id": "0032ee93-f11f-4045-b438-3943b0f9efdd",
+      "userId": "b7499914-4b55-491e-aaea-99a72a8c9c3d",
+      "auctionId": "44444444-4725-4562-3a05-ei0c1jf44444",
+      "bid": 70
+    },
+    {
+      "id": "28694cde-41ce-4938-b35e-1436a2513ac3",
+      "userId": "b7499914-4b55-491e-aaea-99a72a8c9c3d",
+      "auctionId": "bbbbbbbb-be2c-4562-0g12-lp7j8qmbbbb",
+      "bid": 459
     }
   ]
 }

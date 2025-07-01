@@ -9,7 +9,6 @@ const SignIn = lazy(() => import('../pages/auth/SignInPage'))
 const SignUp = lazy(() => import('../pages/auth/SignUpPage'))
 const Redirecting = lazy(() => import('./Redirecting'))
 const AuctionRoom = lazy(() => import('../pages/AuctionRoomPage'))
-const AdminPanel = lazy(() => import('../pages/admin/AdminPanelPage'))
 const UserAdmin = lazy(() => import('../pages/admin/UserAdminPage'))
 const ErrorPage = lazy(() => import('../pages/error/ErrorPage'))
 
@@ -27,7 +26,6 @@ export const AppRoutes = () => {
         }>
           <Route path='auctionRoom/:id' element={<AuctionRoom />} />
           <Route element={<RoleGuard />}>
-            <Route path='adminPanel' element={<AdminPanel />} />
             <Route path='userAdmin' element={
               <Suspense fallback={<div>Cargando...</div>}>
                 <UserAdmin />
