@@ -90,7 +90,7 @@ const AuctionItem = ({
   onPinClick,
   onEditClick,
   onDeleteClick,
-  onClose
+  // onClose
 }: AuctionItemProps) => {
   const renderer: CountdownRendererFn = ({
     days,
@@ -100,7 +100,7 @@ const AuctionItem = ({
     completed,
   }) => {
     if (completed) {
-      onClose?.()
+      // onClose?.()
       return (
         <Box sx={{ p: 1 }}>
           <Typography variant="body2" align="center" color="text.secondary">
