@@ -1,69 +1,86 @@
-# React + TypeScript + Vite
+Aquí tienes el README actualizado con la corrección en el paso 6 y la sección de **Importante** con el aviso que me pediste, usando formato de bloque de cita con énfasis:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# Proyecto Subastas React + MUI
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Descripción
 
-## Expanding the ESLint configuration
+Este proyecto es una aplicación web de subastas desarrollada con React y Material-UI (MUI). Permite visualizar subastas activas, ver detalles de productos, categorías, y ofertas actuales con un contador regresivo en tiempo real. Incluye funcionalidades para publicar ofertas, así como botones para editar y eliminar subastas (en la interfaz).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Características principales
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+* Visualización de subastas con detalles del producto, imagen, descripción y categorías.
+* Contador regresivo que muestra el tiempo restante de cada subasta (meses, semanas, días, horas, minutos y segundos).
+* Visualización y gestión de ofertas con interfaz amigable y botones para publicar ofertas.
+* Iconografía representativa para cada categoría de producto.
+* Botones para editar y eliminar subastas con confirmaciones.
+* Diseño responsivo y moderno utilizando Material-UI.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Requisitos previos
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* Node.js (versión 16 o superior recomendada)
+* npm o yarn instalado
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## Instalación y ejecución
+
+1. Clona este repositorio:
+
+   ```bash
+   git clone <URL_DEL_REPOSITORIO>
+   cd <NOMBRE_DEL_PROYECTO>
+   ```
+
+2. Instala las dependencias:
+
+   ```bash
+   npm install
+   # o
+   yarn install
+   ```
+
+3. Crea un archivo `.env` en la raíz del proyecto con el siguiente contenido:
+
+   ```
+   VITE_API_URL=http://localhost:3000
+   VITE_API_URL_USER=http://localhost:3001
+   ```
+
+4. Ejecuta los servidores JSON necesarios para la página web:
+
+   ```bash
+   npm run jserver
+   ```
+
+   En otra terminal:
+
+   ```bash
+   npm run jserverU
+   ```
+
+5. Ejecuta la aplicación en modo desarrollo:
+
+   ```bash
+   npm start
+   # o
+   yarn start
+   ```
+
+6. Abre tu navegador y visita:
+   http://localhost:5173/
+
+---
+
+> [!IMPORTANT]
+> * No se logró implementar el CRUD de usuarios.
+> * Tampoco se completó la implementación de SSE (Server-Sent Events) para actualizaciones en tiempo real.
+
+---
+
+¿Quieres que te ayude a generar también un archivo `README.md` listo para usar o con formato Markdown especial?
